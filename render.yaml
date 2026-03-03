@@ -1,0 +1,11 @@
+services:
+  - type: worker
+    name: spread-bot
+    runtime: python
+    plan: free
+    pythonVersion: "3.11"
+    buildCommand: pip install -r requirements.txt
+    startCommand: python spread_bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false   # значение вводишь вручную в дашборде Render
